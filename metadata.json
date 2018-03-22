@@ -7,10 +7,6 @@
   "source": "git://github.com/opentable/puppet-singularity.git",
   "issues_url": "https://github.com/opentable/puppet-singularity/issues",
   "project_page": "https://github.com/opentable/puppet-singularity",
-  "dependencies": [
-    { "name": "puppetlabs/stdlib", "version_requirement": ">= 4.13.1 <5.0.0" },
-    { "name": "stahnma/epel", "version_requirement": ">= 1.0.0 <2.0.0" }
-  ],
   "operatingsystem_support": [
     {
       "operatingsystem": "Ubuntu",
@@ -18,7 +14,7 @@
     }
   ],
   "requirements": [
-    {"name": "puppet", "version_requirement": ">= 4.7.0 < 6.0.0" }
+    {"name": "puppet", "version_requirement": ">= 3.0.0 < 6.0.0" }
   ]
 }
 
