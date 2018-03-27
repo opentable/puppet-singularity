@@ -4,7 +4,7 @@ class singularity::install inherits singularity {
       include singularity::install::archive
     }
     default: {
-      fail('Only valid installation methods is `archive`')
+      fail('Only valid installation method is `archive` for now')
     }
   }
 }

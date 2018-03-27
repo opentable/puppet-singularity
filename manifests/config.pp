@@ -1,14 +1,6 @@
-# Private class.
-class singularity::config {
-  assert_private()
-
-  file { 'singularity.conf':
-    ensure  => 'file',
-    path    => $::singularity::config_path,
-    content => template($::singularity::config_template),
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
+class singularity::config inherits singularity {
+  file {"${::singularity::install_dir}/singularity.yml":
+      ensure  => file,
+      content => template('singularity/singularity.yml.erb'),
   }
-
 }
