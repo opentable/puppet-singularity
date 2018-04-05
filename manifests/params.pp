@@ -6,6 +6,7 @@ class singularity::params {
   $group                = 'root'
   $master_list          = undef
   $maxbuffers           = 16777200
+  $service_ensure       = true
   $service_name         = "singularity"
   $service_provider     = "systemd"
   $singularity_version  = '0.19.1'
