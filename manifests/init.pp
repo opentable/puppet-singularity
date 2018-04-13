@@ -1,5 +1,6 @@
 class singularity (
   String            $carbon_otenv         = $::singularity::params::carbon_otenv,
+  String            $external_host        = $::singularity::params::external_host,
   String            $install_dir          = $::singularity::params::install_dir,
   String            $install_method       = $::singularity::params::install_method,
   String            $group                = $::singularity::params::group,

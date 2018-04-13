@@ -1,6 +1,7 @@
 # Private class.
 class singularity::params {
   $carbon_otenv         = hiera('carbon_otenv')
+  $external_host        = "${::ipaddress}:7099"
   $install_dir          = "/srv/singularity"
   $install_method       = 'archive'
   $group                = 'root'
