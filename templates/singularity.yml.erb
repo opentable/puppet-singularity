@@ -45,11 +45,11 @@ ui:
   baseUrl: http://<%= @external_host %>
 
 smtp:
-  from: '"<%= @cluster_name %> singularity" <singularity-noreply@opentable.com>'
+  from: '"<%= @cluster_name %> singularity" <<%= @from_email %>>'
   host: localhost
   port: 25
   admins:
-    - platform-alert@opentable.com
+    - <%= @notify_email %>
   emails:
     TASK_FAILED:
       - OWNERS
