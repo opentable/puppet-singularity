@@ -13,8 +13,9 @@ class singularity (
   String            $systemd_path         = $::singularity::params::systemd_path,
   Optional[String]  $systemd_unit_want    = $::singularity::params::systemd_unit_want,
   String            $systemd_unit_after   = $::singularity::params::systemd_unit_after,
-  String            $user                 = $::singularity::params::user
-
+  String            $user                 = $::singularity::params::user,
+  String            $from_email           = $::singularity::params::from_email,
+  String            $notify_email         = $::singularity::params::notify_email,
 ) inherits singularity::params {
 
   include singularity::install

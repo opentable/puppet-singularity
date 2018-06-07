@@ -17,6 +17,8 @@ class singularity::params {
   $systemd_unit_after   = 'network.target'
   $systemd_unit_want    = undef
   $user                 = 'root'
+  $from_email           = "no-reply@${::fqdn}"
+  $notify_email         = "admin@${::fqdn}"
 
   case $::osfamily {
     'Debian': {
