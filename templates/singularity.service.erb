@@ -11,9 +11,8 @@ After=<%= scope.lookupvar("singularity::systemd_unit_after") %>
 <% end -%>
 
 [Service]
-ExecStart=/bin/bash -c 'set -o errexit -o nounset; \
-  export LIBPROCESS_IP=<%= scope.lookupvar("ipaddress4") %>;\
-  exec java -Djute.maxbuffer=<%= scope.lookupvar("singularity::maxbuffers") %> -jar <%= scope.lookupvar("singularity::singularity_jar") %> server <%= scope.lookupvar("singularity::install_dir") %>/singularity.yml'
+ExecStart=/bin/bash -c "set -o errexit -o nounset; \
+  exec <%=@install_dir%>/run.sh"
 
 Restart=always
 RemainAfterExit=no
