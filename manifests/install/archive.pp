@@ -13,4 +13,14 @@ class singularity::install::archive inherits singularity::install {
     ensure => present,
     source => $singularity_url,
   }
+
+  file {
+    "/${::singularity::install_dir}/run.sh":
+      ensure  => file,
+      content => template("${module_name}/singularity-run.sh.erb"),
+      mode    => "0744",
+      notify  => Service['singularity']
+  }
+
+
 }
