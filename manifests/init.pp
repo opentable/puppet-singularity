@@ -6,7 +6,6 @@ class singularity (
   String            $install_method       = $::singularity::params::install_method,
   String            $group                = $::singularity::params::group,
   Array[String]     $master_list          = $::singularity::params::master_list,
-  Integer           $maxbuffers           = $::singularity::params::maxbuffers,
   String            $notify_email         = $::singularity::params::notify_email,
   String            $service_name         = $::singularity::params::service_name,
   String            $service_provider     = $::singularity::params::service_provider,
