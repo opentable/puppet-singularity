@@ -2,11 +2,12 @@
 class singularity::params {
   $carbon_otenv         = hiera('carbon_otenv')
   $external_host        = "${::ipaddress}:7099"
+  $from_email           = "no-reply@${::fqdn}"
   $install_dir          = "/srv/singularity"
   $install_method       = 'archive'
   $group                = 'root'
   $master_list          = undef
-  $maxbuffers           = 16777200
+  $notify_email         = "admin@${::fqdn}"
   $service_ensure       = true
   $service_name         = "singularity"
   $service_provider     = "systemd"
@@ -17,8 +18,8 @@ class singularity::params {
   $systemd_unit_after   = 'network.target'
   $systemd_unit_want    = undef
   $user                 = 'root'
-  $from_email           = "no-reply@${::fqdn}"
-  $notify_email         = "admin@${::fqdn}"
+  $zookeeper_max_buffer = 16777200
+
 
   case $::osfamily {
     'Debian': {
