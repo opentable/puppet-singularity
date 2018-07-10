@@ -15,7 +15,7 @@ class singularity (
   Optional[String]  $systemd_unit_want    = $::singularity::params::systemd_unit_want,
   String            $systemd_unit_after   = $::singularity::params::systemd_unit_after,
   String            $user                 = $::singularity::params::user,
-  String            $zookeeper_max_buffer = $::singularity::params::zookeeper_max_buffer,
+  Integer           $zookeeper_max_buffer = $::singularity::params::zookeeper_max_buffer,
 ) inherits singularity::params {
 
   include singularity::install
