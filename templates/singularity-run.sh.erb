@@ -3,4 +3,4 @@
 set -o errexit -o nounset
 
 export LIBPROCESS_IP=<%= @ipaddress4 %>
-exec java -Djute.maxbuffer=<%= @zookeeper_maxbuffers %> -jar singularity-<%= @singularity_version %>.jar server <%= @install_dir %>/singularity.yml
+exec java -Djute.maxbuffer=<%= @zookeeper_max_buffer %> -jar <%= @install_dir %>/singularity-<%= @singularity_version %>.jar server <%= @install_dir %>/singularity.yml
