@@ -18,7 +18,7 @@ graphite:
   prefix: app_metrics.singularity.<%= @env_short %>.<%= @region_short %>.<%= @hostname %>
 
 mesos:
-  master: <%= @env_short == 'prod' ? "zk://" + @master_list.map{ |m| "#{m}:2181" }.join(',') + "/mesos" : @master_list.map{ |m| "#{m}:5050" }.join(',') %>
+  master: <%= @singularity_version.to_f < 0.18 ? "zk://" + @master_list.map{ |m| "#{m}:2181" }.join(',') + "/mesos" : @master_list.map{ |m| "#{m}:5050" }.join(',') %>
   defaultCpus: 0.1
   defaultMemory: 16
   frameworkName: Singularity
