@@ -1,4 +1,4 @@
-# Collectd module for Puppet
+# Singularity module for Puppet
 
 ## Description
 
