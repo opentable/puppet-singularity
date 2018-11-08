@@ -5,6 +5,7 @@ class singularity (
   String            $install_dir          = $::singularity::params::install_dir,
   String            $install_method       = $::singularity::params::install_method,
   String            $group                = $::singularity::params::group,
+  String            $log_directory        = $::singularity::params::log_directory,
   Array[String]     $master_list          = $::singularity::params::master_list,
   String            $notify_email         = $::singularity::params::notify_email,
   String            $service_name         = $::singularity::params::service_name,
