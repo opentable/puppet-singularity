@@ -4,8 +4,11 @@ class singularity::install::archive inherits singularity::install {
     default => $::singularity::singularity_url,
   }
 
-  file {
-    "/${::singularity::install_dir}":
+  file { "/${::singularity::install_dir}":
+    ensure => directory
+  } ->
+
+  file { "/${::singularity::log_directory}":
     ensure => directory
   } ->
 
@@ -14,8 +17,7 @@ class singularity::install::archive inherits singularity::install {
     source => $singularity_url,
   }
 
-  file {
-    "/${::singularity::install_dir}/run.sh":
+  file { "/${::singularity::install_dir}/run.sh":
       ensure  => file,
       content => template("${module_name}/singularity-run.sh.erb"),
       mode    => "0744",
