@@ -11,8 +11,7 @@ After=<%= scope.lookupvar("singularity::systemd_unit_after") %>
 <% end -%>
 
 [Service]
-ExecStart=/bin/bash -c "set -o errexit -o nounset; \
-  exec <%=@install_dir%>/run.sh"
+ExecStart=/bin/bash -c "set -o errexit -o nounset; exec <%=@install_dir%>/run.sh >><%=@log_directory%>/singularity.log 2>&1"
 
 Restart=always
 RemainAfterExit=no
