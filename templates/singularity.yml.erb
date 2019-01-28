@@ -64,6 +64,19 @@ network:
 disasterDetection:
   enabled: true
 
+database:
+  driverClass: org.postgresql.Driver
+  user: <%= @mesos_psql_username %>
+  password: <%= @mesos_psql_password %>
+  url: <%= @mesos_psql_url %>
+
+historyPurging:
+  deleteTaskHistoryAfterDays: 14                   # purge tasks older than this
+  deleteTaskHistoryAfterTasksPerRequest: 1000      # How many tasks per request before purge
+  deleteTaskHistoryBytesInsteadOfEntireRow: true   # Keep the row, just delete data to save space
+  checkTaskHistoryEveryHours: 24                   # how often to check for tasks to purge
+  enabled: true                                    # determines if we should run the purge
+
 defaultSlavePlacement: OPTIMISTIC
 zookeeperAsyncTimeout: 20000
 maxRequestsWithHistoryInZkWhenNoDatabase: 200
