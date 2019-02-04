@@ -22,7 +22,7 @@ class singularity::params {
   $zookeeper_max_buffer = 16777200,
   $mesos_psql_username  = hiera('mesos_psql_username',undef),
   $mesos_psql_password = hiera('mesos_psql_password',undef),
-  $mesos_mysql_url      = hiera('mesos_psql_url',undef)
+  $mesos_psql_url      = hiera('mesos_psql_url',undef)
 
 
   case $::osfamily {
